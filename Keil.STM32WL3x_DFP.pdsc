@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package schemaVersion="1.7.36" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Open-CMSIS-Pack/Open-CMSIS-Pack-Spec/v1.7.36/schema/PACK.xsd">
+  <vendor>Keil</vendor>
+  <name>STM32WL3x_DFP</name>
+  <description overview="Documents/OVERVIEW.md">STMicroelectronics STM32WL3 Series Device Support</description>
+  <url>https://www.keil.com/pack/</url>
+  <repository type="git">https://github.com/Open-CMSIS-Pack/STM32WL3x_DFP.git</repository>
+  <license>LICENSE</license>
+  <licenseSets>
+    <licenseSet id="all" default="true" gating="true">
+      <license name="LICENSE" title="Apache 2.0 open-source license" spdx="Apache-2.0"/>
+    </licenseSet>
+  </licenseSets>
+
+  <releases>
+    <release version="0.0.0">
+      Active development...
+    </release>
+  </releases>
+
+  <keywords>
+    <keyword>ST</keyword>
+    <keyword>Device Support</keyword>
+    <keyword>Device Family Package STMicroelectronics</keyword>
+    <keyword>STM32WL3</keyword>
+    <keyword>STM32WL3x</keyword>
+  </keywords>
+
+  <devices>
+    <family Dfamily="STM32WL3 Series" Dvendor="STMicroelectronics:13">
+      <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="64000000"/>
+      <description>
+        High performance, ultra-low power ARM Cortex-M0+ 32-bit based architecture core
+        - Upgradable BLE stack (stored in embedded Flash memory)
+        - AES security co-processor
+        - Low power modes
+        - 32 MHz crystal oscillator
+        - 64 MHz ring oscillator
+        - 32768 kHz crystal oscillator
+        - 32 kHz ring oscillator
+      </description>
+
+      <!-- ************************  Subfamily 'STM32WL33'  ************************ -->
+      <subFamily DsubFamily="STM32WL33">
+        <compile define="STM32WL33"/>
+        <debug svd="CMSIS/SVD/STM32WL33.svd"/>
+
+        <!-- ################################### 256 KB ################################### -->
+        <!-- *************************  Device 'STM32WL33CCVx'  ************************* -->
+        <device Dname="STM32WL33CCVx">
+          <memory    name="Main_Flash" access="rx"         start="0x10040000" size="0x00040000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"        start="0x20000000" size="0x00008000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_256K.FLM" start="0x10040000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x00008000" default="1" />
+          <feature type="QFN" n="48"/>
+        </device>
+        <!-- *************************  Device 'STM32WL33KCVx'  ************************* -->
+        <device Dname="STM32WL33KCVx">
+          <memory    name="Main_Flash" access="rx"         start="0x10040000" size="0x00040000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"        start="0x20000000" size="0x00008000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_256K.FLM" start="0x10040000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x00008000" default="1" />
+          <feature type="QFN" n="32"/>
+        </device>
+        <!-- ################################### 128 KB ################################### -->
+        <!-- *************************  Device 'STM32WL33CBVx'  ************************* -->
+        <device Dname="STM32WL33CBVx">
+          <memory    name="Main_Flash" access="rx"         start="0x10040000" size="0x00020000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"        start="0x20000000" size="0x00008000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_128K.FLM" start="0x10040000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x00008000" default="1" />
+          <feature type="QFN" n="48"/>
+        </device>
+        <!-- *************************  Device 'STM32WL33KCVx'  ************************* -->
+        <device Dname="STM32WL33KBVx">
+          <memory    name="Main_Flash" access="rx"         start="0x10040000" size="0x00020000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"        start="0x20000000" size="0x00008000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_128K.FLM" start="0x10040000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x00008000" default="1" />
+          <feature type="QFN" n="32"/>
+        </device>
+        <!-- ################################### 64 KB ################################### -->
+        <!-- *************************  Device 'STM32WL33C8Vx'  ************************* -->
+        <device Dname="STM32WL33C8Vx">
+          <memory    name="Main_Flash" access="rx"        start="0x10040000" size="0x00010000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"       start="0x20000000" size="0x00004000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_64K.FLM" start="0x10040000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x00004000" default="1" />
+          <feature type="QFN" n="48"/>
+        </device>
+        <!-- *************************  Device 'STM32WL33K8Vx'  ************************* -->
+        <device Dname="STM32WL33K8Vx">
+          <memory    name="Main_Flash" access="rx"        start="0x10040000" size="0x00010000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"       start="0x20000000" size="0x00004000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_64K.FLM" start="0x10040000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x00004000" default="1" />
+          <feature type="QFN" n="32"/>
+        </device>
+      </subFamily>
+    </family>
+  </devices>
+
+  <conditions>
+    <!-- Device Conditions -->
+    <condition id="STM32WL3">
+      <description>STMicroelectronics STM32WL3 Series devices</description>
+      <require Dvendor="STMicroelectronics:13" Dname="STM32WL3*"/>
+    </condition>
+
+    <!-- Device + CMSIS Conditions -->
+    <condition id="STM32WL3 CMSIS">
+      <description>STMicroelectronics STM32WL3 Device and CMSIS-CORE</description>
+      <require condition="STM32WL3"/>
+      <require Cclass="CMSIS" Cgroup="CORE"/>
+    </condition>
+
+  </conditions>
+
+  <components>
+    <!-- CubeMX Generator -->
+    <component generator="CubeMX" Cclass="Device" Cgroup="CubeMX" Cversion="1.0.0" condition="STM32WL3 CMSIS">
+      <description>Configuration via STM32CubeMX</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_CUBE_MX
+        #define CMSIS_device_header "stm32wl3x.h"
+      </RTE_Components_h>
+      <files>
+        <file category="doc" name="https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/CubeMX.md"/>
+      </files>
+    </component>
+  </components>
+
+  <csolution>
+    <!-- CubeMX Basic CMSIS Solution template -->
+    <template name="CubeMX Basic solution" path="Templates/CubeMX" file="CubeMX.csolution.yml" condition="STM32WL3">
+      <description>Create a CubeMX basic solution with project</description>
+    </template>
+
+  </csolution>
+</package>
