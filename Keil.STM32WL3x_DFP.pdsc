@@ -8,12 +8,12 @@
   <license>LICENSE</license>
   <licenseSets>
     <licenseSet id="all" default="true" gating="true">
-      <license name="LICENSE" title="Apache 2.0 open-source license" spdx="Apache-2.0"/>
+      <license title="Apache-2.0 License for CMSIS add-ons"                  name="LICENSE"   spdx="Apache-2.0"/>
     </licenseSet>
   </licenseSets>
 
   <releases>
-    <release version="0.0.0">
+    <release version="1.0.1-dev">
       Active development...
     </release>
   </releases>
@@ -92,6 +92,7 @@
         </device>
       </subFamily>
     </family>
+
   </devices>
 
   <conditions>

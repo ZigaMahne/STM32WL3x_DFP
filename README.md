@@ -1,10 +1,11 @@
 [![Version](https://img.shields.io/github/v/release/Open-CMSIS-Pack/STM32WL3x_DFP)](https://github.com/Open-CMSIS-Pack/STM32WL3x_DFP/releases/latest)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-green?label)](https://github.com/Open-CMSIS-Pack/STM32WL3x_DFP/blob/main/LICENSE)
 
 # STM32WL3x_DFP
 
 This is the development repository for the **STMicroelectronics STM32WL3 Series Device Family Pack (DFP)** - a CMSIS software pack that is designed to work with all compiler toolchains (Arm Compiler, GCC, IAR, LLVM). It is released as [CMSIS software pack](https://www.keil.arm.com/packs/stm32wl3x_dfp-keil) and therefore accessible by CMSIS-Pack enabled software development tools.
 
-This DFP uses the generator integration of the [CMSIS-Toolbox to Configure STM32 Devices with CubeMX](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/CubeMX.md) that is also supported in µVision 5.40 an higher.
+This DFP uses the generator integration of the [CMSIS-Toolbox to Configure STM32 Devices with CubeMX](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/CubeMX.md) that is also supported in µVision 5.40 and higher.
 
 ## Repository top-level structure
 
@@ -38,7 +39,8 @@ This development repository can be used in a local directory and [mapped as soft
 
 The software pack is generated using bash shell scripts.
 
-- `./gen_pack.sh` based on [Open-CMSIS-Pack/gen-pack](https://github.com/Open-CMSIS-Pack/gen-pack) generates the software pack. Run this script locally with:
+- `./gen_pack.sh` based on [Open-CMSIS-Pack/gen-pack](
+https://github.com/Open-CMSIS-Pack/gen-pack)) generates the software pack. Run this script locally with:
 
       STM32WL3x_DFP $ ./gen_pack.sh
 
@@ -47,10 +49,6 @@ The software pack is generated using bash shell scripts.
 The repository uses GitHub Actions to generate the pack:
 
 - `.github/workflows/pack.yml` based on [Open-CMSIS-Pack/gen-pack-action](https://github.com/Open-CMSIS-Pack/gen-pack-action) generates pack using the [Generate software pack](#generate-software-pack) scripts.
-
-## License
-
-The DFP is licensed under [![License](https://img.shields.io/github/license/Open-CMSIS-Pack/STM32WL3x_DFP?label)](https://github.com/Open-CMSIS-Pack/STM32WL3x_DFP/blob/main/LICENSE).
 
 ## Issues
 
