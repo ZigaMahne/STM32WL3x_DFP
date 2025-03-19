@@ -28,7 +28,7 @@
 
   <devices>
     <family Dfamily="STM32WL3 Series" Dvendor="STMicroelectronics:13">
-      <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="64000000"/>
+      <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Ddsp="NO_DSP" Dendian="Little-endian" Dclock="64000000"/>
       <description>
         High performance, ultra-low power ARM Cortex-M0+ 32-bit based architecture core
         - Upgradable BLE stack (stored in embedded Flash memory)
@@ -68,7 +68,7 @@
           <algorithm name="CMSIS/Flash/STM32WL3x_128K.FLM" start="0x10040000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x00008000" default="1" />
           <feature type="QFN" n="48"/>
         </device>
-        <!-- *************************  Device 'STM32WL33KCVx'  ************************* -->
+        <!-- *************************  Device 'STM32WL33KBVx'  ************************* -->
         <device Dname="STM32WL33KBVx">
           <memory    name="Main_Flash" access="rx"         start="0x10040000" size="0x00020000" default="1" startup="1" />
           <memory    name="SRAM1"      access="rwx"        start="0x20000000" size="0x00008000" default="1" />
@@ -91,8 +91,65 @@
           <feature type="QFN" n="32"/>
         </device>
       </subFamily>
-    </family>
+	   <!-- ************************  Subfamily 'STM32WL31'  ************************ -->
+      <subFamily DsubFamily="STM32WL31">
+        <compile define="STM32WL31"/>
+        <debug svd="CMSIS/SVD/STM32WL31.svd"/>
 
+        <!-- ################################### 128 KB ################################### -->
+         <!-- *************************  Device 'STM32WL31KBVx'  ************************* -->
+        <device Dname="STM32WL31KBVx">
+          <memory    name="Main_Flash" access="rx"         start="0x10040000" size="0x00020000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"        start="0x20000000" size="0x00004000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_128K.FLM" start="0x10040000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x00004000" default="1" />
+          <feature type="QFN" n="32"/>
+        </device>
+		 <!-- *************************  Device 'STM32WL31CBVx'  ************************* -->
+        <device Dname="STM32WL31CBVx">
+          <memory    name="Main_Flash" access="rx"         start="0x10040000" size="0x00020000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"        start="0x20000000" size="0x00004000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_128K.FLM" start="0x10040000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x00004000" default="1" />
+          <feature type="QFN" n="48"/>
+        </device>
+        <!-- ################################### 64 KB ################################### -->
+        <!-- *************************  Device 'STM32WL31K8Vx'  ************************* -->
+        <device Dname="STM32WL31K8Vx">
+          <memory    name="Main_Flash" access="rx"        start="0x10040000" size="0x00010000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"       start="0x20000000" size="0x00002000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_64K.FLM" start="0x10040000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x00002000" default="1" />
+          <feature type="QFN" n="32"/>
+        </device>
+		<!-- *************************  Device 'STM32WL31C8Vx'  ************************* -->
+        <device Dname="STM32WL31C8Vx">
+          <memory    name="Main_Flash" access="rx"        start="0x10040000" size="0x00010000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"       start="0x20000000" size="0x00002000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_64K.FLM" start="0x10040000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x00002000" default="1" />
+          <feature type="QFN" n="48"/>
+        </device>
+		</subFamily>
+		 <!-- ************************  Subfamily 'STM32WL30'  ************************ -->
+      <subFamily DsubFamily="STM32WL30">
+        <compile define="STM32WL30"/>
+        <debug svd="CMSIS/SVD/STM32WL30.svd"/>
+
+        <!-- ################################### 128 KB ################################### -->
+         <!-- *************************  Device 'STM32WL30KBVx'  ************************* -->
+        <device Dname="STM32WL30KBVx">
+          <memory    name="Main_Flash" access="rx"         start="0x10040000" size="0x00020000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"        start="0x20000000" size="0x00004000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_128K.FLM" start="0x10040000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x00004000" default="1" />
+          <feature type="QFN" n="32"/>
+        </device>
+        <!-- ################################### 64 KB ################################### -->
+        <!-- *************************  Device 'STM32WL30K8Vx'  ************************* -->
+        <device Dname="STM32WL30K8Vx">
+          <memory    name="Main_Flash" access="rx"        start="0x10040000" size="0x00010000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"       start="0x20000000" size="0x00002000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_64K.FLM" start="0x10040000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x00002000" default="1" />
+          <feature type="QFN" n="32"/>
+        </device>
+		</subFamily>
+    </family>
   </devices>
 
   <conditions>
