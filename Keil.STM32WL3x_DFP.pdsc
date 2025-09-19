@@ -19,6 +19,8 @@
       Updated Templates:
       - Added DWARF-5 debug information
       - Added generated output files
+      Package Description (pdsc):
+      - Shortened device family description
     </release>
   </releases>
 
@@ -34,14 +36,7 @@
     <family Dfamily="STM32WL3 Series" Dvendor="STMicroelectronics:13">
       <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Ddsp="NO_DSP" Dendian="Little-endian" Dclock="64000000"/>
       <description>
-        High performance, ultra-low power ARM Cortex-M0+ 32-bit based architecture core
-        - Upgradable BLE stack (stored in embedded Flash memory)
-        - AES security co-processor
-        - Low power modes
-        - 32 MHz crystal oscillator
-        - 64 MHz ring oscillator
-        - 32768 kHz crystal oscillator
-        - 32 kHz ring oscillator
+High performance and ultra-low power STM32WL3 MCUs with Arm Cortex-M0+ core, MPU, frequency up to 64 MHz.
       </description>
 
       <!-- ************************  Subfamily 'STM32WL33'  ************************ -->
