@@ -13,14 +13,8 @@
   </licenseSets>
 
   <releases>
-    <release version="1.1.1-dev">
+    <release version="1.1.2-dev">
       Active development ...
-      Updated documentation references
-      Updated Templates:
-      - Added DWARF-5 debug information
-      - Added generated output files
-      Package Description (pdsc):
-      - Shortened device family description
     </release>
   </releases>
 
