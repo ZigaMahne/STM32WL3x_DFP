@@ -8,13 +8,16 @@
   <license>LICENSE</license>
   <licenseSets>
     <licenseSet id="all" default="true" gating="true">
-      <license title="Apache-2.0 License for CMSIS add-ons"                  name="LICENSE"   spdx="Apache-2.0"/>
+      <license title="Apache-2.0 License for CMSIS add-ons" name="LICENSE" spdx="Apache-2.0"/>
     </licenseSet>
   </licenseSets>
 
   <releases>
-    <release version="1.1.2-dev">
+    <release version="1.2.0-dev">
       Active development ...
+      Updated SVD files
+      Package Description (pdsc):
+      - Added support for STM32WL33CCV/KCV/CBV/KBV/C8V/K8Vxx and STM32WL3Rxx devices
     </release>
   </releases>
 
@@ -35,7 +38,7 @@ High performance and ultra-low power STM32WL3 MCUs with Arm Cortex-M0+ core, MPU
 
       <!-- ************************  Subfamily 'STM32WL33'  ************************ -->
       <subFamily DsubFamily="STM32WL33">
-        <compile define="STM32WL33"/>
+        <compile define="STM32WL3XX"/>
         <debug svd="CMSIS/SVD/STM32WL33.svd"/>
 
         <!-- ################################### 256 KB ################################### -->
@@ -46,8 +49,22 @@ High performance and ultra-low power STM32WL3 MCUs with Arm Cortex-M0+ core, MPU
           <algorithm name="CMSIS/Flash/STM32WL3x_256K.FLM" start="0x10040000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x00008000" default="1" />
           <feature type="QFN" n="48"/>
         </device>
+        <!-- *************************  Device 'STM32WL33CCVxX'  ************************* -->
+        <device Dname="STM32WL33CCVxX">
+          <memory    name="Main_Flash" access="rx"         start="0x10040000" size="0x00040000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"        start="0x20000000" size="0x00008000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_256K.FLM" start="0x10040000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x00008000" default="1" />
+          <feature type="QFN" n="48"/>
+        </device>
         <!-- *************************  Device 'STM32WL33KCVx'  ************************* -->
         <device Dname="STM32WL33KCVx">
+          <memory    name="Main_Flash" access="rx"         start="0x10040000" size="0x00040000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"        start="0x20000000" size="0x00008000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_256K.FLM" start="0x10040000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x00008000" default="1" />
+          <feature type="QFN" n="32"/>
+        </device>
+        <!-- *************************  Device 'STM32WL33KCVxX'  ************************* -->
+        <device Dname="STM32WL33KCVxX">
           <memory    name="Main_Flash" access="rx"         start="0x10040000" size="0x00040000" default="1" startup="1" />
           <memory    name="SRAM1"      access="rwx"        start="0x20000000" size="0x00008000" default="1" />
           <algorithm name="CMSIS/Flash/STM32WL3x_256K.FLM" start="0x10040000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x00008000" default="1" />
@@ -61,8 +78,22 @@ High performance and ultra-low power STM32WL3 MCUs with Arm Cortex-M0+ core, MPU
           <algorithm name="CMSIS/Flash/STM32WL3x_128K.FLM" start="0x10040000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x00008000" default="1" />
           <feature type="QFN" n="48"/>
         </device>
+        <!-- *************************  Device 'STM32WL33CBVxX'  ************************* -->
+        <device Dname="STM32WL33CBVxX">
+          <memory    name="Main_Flash" access="rx"         start="0x10040000" size="0x00020000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"        start="0x20000000" size="0x00008000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_128K.FLM" start="0x10040000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x00008000" default="1" />
+          <feature type="QFN" n="48"/>
+        </device>
         <!-- *************************  Device 'STM32WL33KBVx'  ************************* -->
         <device Dname="STM32WL33KBVx">
+          <memory    name="Main_Flash" access="rx"         start="0x10040000" size="0x00020000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"        start="0x20000000" size="0x00008000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_128K.FLM" start="0x10040000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x00008000" default="1" />
+          <feature type="QFN" n="32"/>
+        </device>
+        <!-- *************************  Device 'STM32WL33KBVxX'  ************************* -->
+        <device Dname="STM32WL33KBVxX">
           <memory    name="Main_Flash" access="rx"         start="0x10040000" size="0x00020000" default="1" startup="1" />
           <memory    name="SRAM1"      access="rwx"        start="0x20000000" size="0x00008000" default="1" />
           <algorithm name="CMSIS/Flash/STM32WL3x_128K.FLM" start="0x10040000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x00008000" default="1" />
@@ -76,6 +107,13 @@ High performance and ultra-low power STM32WL3 MCUs with Arm Cortex-M0+ core, MPU
           <algorithm name="CMSIS/Flash/STM32WL3x_64K.FLM" start="0x10040000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x00004000" default="1" />
           <feature type="QFN" n="48"/>
         </device>
+        <!-- *************************  Device 'STM32WL33C8VxX'  ************************* -->
+        <device Dname="STM32WL33C8VxX">
+          <memory    name="Main_Flash" access="rx"        start="0x10040000" size="0x00010000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"       start="0x20000000" size="0x00004000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_64K.FLM" start="0x10040000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x00004000" default="1" />
+          <feature type="QFN" n="48"/>
+        </device>
         <!-- *************************  Device 'STM32WL33K8Vx'  ************************* -->
         <device Dname="STM32WL33K8Vx">
           <memory    name="Main_Flash" access="rx"        start="0x10040000" size="0x00010000" default="1" startup="1" />
@@ -83,8 +121,16 @@ High performance and ultra-low power STM32WL3 MCUs with Arm Cortex-M0+ core, MPU
           <algorithm name="CMSIS/Flash/STM32WL3x_64K.FLM" start="0x10040000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x00004000" default="1" />
           <feature type="QFN" n="32"/>
         </device>
+        <!-- *************************  Device 'STM32WL33K8VxX'  ************************* -->
+        <device Dname="STM32WL33K8VxX">
+          <memory    name="Main_Flash" access="rx"        start="0x10040000" size="0x00010000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"       start="0x20000000" size="0x00004000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_64K.FLM" start="0x10040000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x00004000" default="1" />
+          <feature type="QFN" n="32"/>
+        </device>
+
       </subFamily>
-	   <!-- ************************  Subfamily 'STM32WL31'  ************************ -->
+      <!-- ************************  Subfamily 'STM32WL31'  ************************ -->
       <subFamily DsubFamily="STM32WL31">
         <compile define="STM32WL31"/>
         <debug svd="CMSIS/SVD/STM32WL31.svd"/>
@@ -97,7 +143,7 @@ High performance and ultra-low power STM32WL3 MCUs with Arm Cortex-M0+ core, MPU
           <algorithm name="CMSIS/Flash/STM32WL3x_128K.FLM" start="0x10040000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x00004000" default="1" />
           <feature type="QFN" n="32"/>
         </device>
-		 <!-- *************************  Device 'STM32WL31CBVx'  ************************* -->
+        <!-- *************************  Device 'STM32WL31CBVx'  ************************* -->
         <device Dname="STM32WL31CBVx">
           <memory    name="Main_Flash" access="rx"         start="0x10040000" size="0x00020000" default="1" startup="1" />
           <memory    name="SRAM1"      access="rwx"        start="0x20000000" size="0x00004000" default="1" />
@@ -112,15 +158,16 @@ High performance and ultra-low power STM32WL3 MCUs with Arm Cortex-M0+ core, MPU
           <algorithm name="CMSIS/Flash/STM32WL3x_64K.FLM" start="0x10040000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x00002000" default="1" />
           <feature type="QFN" n="32"/>
         </device>
-		<!-- *************************  Device 'STM32WL31C8Vx'  ************************* -->
+        <!-- *************************  Device 'STM32WL31C8Vx'  ************************* -->
         <device Dname="STM32WL31C8Vx">
           <memory    name="Main_Flash" access="rx"        start="0x10040000" size="0x00010000" default="1" startup="1" />
           <memory    name="SRAM1"      access="rwx"       start="0x20000000" size="0x00002000" default="1" />
           <algorithm name="CMSIS/Flash/STM32WL3x_64K.FLM" start="0x10040000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x00002000" default="1" />
           <feature type="QFN" n="48"/>
         </device>
-		</subFamily>
-		 <!-- ************************  Subfamily 'STM32WL30'  ************************ -->
+      </subFamily>
+
+      <!-- ************************  Subfamily 'STM32WL30'  ************************ -->
       <subFamily DsubFamily="STM32WL30">
         <compile define="STM32WL30"/>
         <debug svd="CMSIS/SVD/STM32WL30.svd"/>
@@ -141,8 +188,47 @@ High performance and ultra-low power STM32WL3 MCUs with Arm Cortex-M0+ core, MPU
           <algorithm name="CMSIS/Flash/STM32WL3x_64K.FLM" start="0x10040000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x00002000" default="1" />
           <feature type="QFN" n="32"/>
         </device>
-		</subFamily>
+
+      </subFamily>
+      <!-- ************************  Subfamily 'STM32WL3R'  ************************ -->
+      <subFamily DsubFamily="STM32WL3R">
+        <compile define="STM32WL3R"/>
+        <debug svd="CMSIS/SVD/STM32WL3R.svd"/>
+        <!-- ################################### 128 KB ################################### -->
+        <!-- *************************  Device 'STM32WL3RKBVx'  ************************* -->
+        <device Dname="STM32WL3RKBVx">
+          <memory    name="Main_Flash" access="rx"         start="0x10040000" size="0x00020000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"        start="0x20000000" size="0x00004000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_128K.FLM" start="0x10040000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x00004000" default="1" />
+          <feature type="QFN" n="32"/>
+        </device>
+        <!-- *************************  Device 'STM32WL3RKBVxX'  ************************* -->
+        <device Dname="STM32WL3RKBVxX">
+          <memory    name="Main_Flash" access="rx"         start="0x10040000" size="0x00020000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"        start="0x20000000" size="0x00004000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_128K.FLM" start="0x10040000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x00004000" default="1" />
+          <feature type="QFN" n="32"/>
+        </device>
+        <!-- ################################### 64 KB ################################### -->
+        <!-- *************************  Device 'STM32WL3RK8Vx'  ************************* -->
+        <device Dname="STM32WL3RK8Vx">
+          <memory    name="Main_Flash" access="rx"        start="0x10040000" size="0x00010000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"       start="0x20000000" size="0x00002000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_64K.FLM" start="0x10040000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x00002000" default="1" />
+          <feature type="QFN" n="32"/>
+        </device>
+        <!-- *************************  Device 'STM32WL3RK8VxX'  ************************* -->
+        <device Dname="STM32WL3RK8VxX">
+          <memory    name="Main_Flash" access="rx"        start="0x10040000" size="0x00010000" default="1" startup="1" />
+          <memory    name="SRAM1"      access="rwx"       start="0x20000000" size="0x00002000" default="1" />
+          <algorithm name="CMSIS/Flash/STM32WL3x_64K.FLM" start="0x10040000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x00002000" default="1" />
+          <feature type="QFN" n="32"/>
+        </device>
+
+      </subFamily>
+
     </family>
+
   </devices>
 
   <conditions>
